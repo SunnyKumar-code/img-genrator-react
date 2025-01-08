@@ -6,16 +6,21 @@ const ImageDisplay = ({ images }) => {
   }
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
+    <div className="masonry-grid">
       {images.map((image) => (
-        <div key={image.id} style={{ maxWidth: '300px', margin: '10px' }}>
+        <a
+          href={image.urls.full}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="imageDiv"
+          key={image.id}
+        >
           <img
             src={image.urls.small}
             alt={image.alt_description || 'Unsplash Image'}
-            style={{ width: '100%', borderRadius: '10px' }}
           />
-          <p style={{ textAlign: 'center', marginTop: '5px' }}>{image.user.name}</p>
-        </div>
+          <p>{image.user.name}</p>
+        </a>
       ))}
     </div>
   );

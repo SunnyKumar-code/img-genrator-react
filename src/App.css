@@ -7,6 +7,7 @@ body {
 h1 {
   color: #007bff;
   margin:  10px 0;
+  text-shadow: none;
 }
 
 input, button {
@@ -15,4 +16,74 @@ input, button {
 
 button:hover {
   background-color: #0056b3;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.masonry-grid {
+  column-count: 3; 
+  column-gap: 15px; 
+  width: 90%;
+  margin: 0 auto;
+}
+
+.imageDiv {
+  display: inline-block;
+  width: 100%; 
+  margin-bottom: 15px; 
+ 
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.imageDiv img {
+  width: 100%; 
+  border-radius: 10px;
+  display: block;
+  
+}
+
+.imageDiv:hover {
+  opacity: 1;
+  transform: scale(1.02); 
+}
+.imageDiv p {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
+ 
+}
+#app {
+  overflow: hidden;
+  overflow-y: scroll;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+#app canvas {
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: 2; 
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    column-count: 1; 
+  }
 }
